@@ -1,0 +1,22 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.textfield {
+  margin: 20px 20px 20px 0px;
+  width: 330px;
+  clear:right;
+}
+
+.textfield input {
+  background-color: #ddd;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  height: 32px;
+  width: 320px;
+  padding: 8px 8px 8px 10px;
+}
+

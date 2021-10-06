@@ -1,0 +1,29 @@
+.container {
+  width: 340px;
+  height: 200px;
+  background-color:#ccc;
+  margin-bottom:10px;
+}
+
+.image {
+  width: 140px;
+  height: 200px;
+  background-color: #666;
+  float: left;
+}
+
+.panel {
+  width: 160px;
+  height: 180px;
+  background-color: rgb(202, 202, 202);
+  float: left;
+  padding: 10px;
+}
+
+h2 {
+  margin: 0px;
+}
+
+button {
+  margin:2px;
+}

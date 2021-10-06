@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="cartPanel">
+    <app-cart-item *ngFor="let cartItem of cart" [cartItem]="cartItem"></app-cart-item>
+  </div>
+  <div class="infoPanel">
+    <app-checkout-form></app-checkout-form>
+  </div>
+  <div class="totalPanel">
+    <app-total></app-total>
+  </div>
+</div>
+
