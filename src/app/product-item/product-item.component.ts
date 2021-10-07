@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../models/Product';
 
 @Component({
@@ -8,6 +8,7 @@ import { Product } from '../models/Product';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
+  @Output() productPage: EventEmitter<number> = new EventEmitter;
 
   constructor() {
     this.product = {
@@ -23,11 +24,16 @@ export class ProductItemComponent implements OnInit {
 
   addToCart(id: number): void{
     console.log(`Item with id: ${id} is added to the cart`);
-    alert('Item is added to cart');
+    alert('Item is added to your cart');
   }
 
-  setQuantity(id: number, event: any): void {
-    console.log(`Item with id: ${id} is set with quantity ${event.target.value}`);
+  setQuantity(id: number, event: Event): void {
+    const quantity: string = (event.target as HTMLInputElement).value as string;
+    console.log(`Item with id: ${id} is set with quantity ${quantity}`);
+  }
+
+  goToPage(id: number): void {
+    this.productPage.emit(id);
   }
 
 }

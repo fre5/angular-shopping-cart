@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Cart } from '../models/Cart';
 
 @Component({
@@ -8,6 +8,7 @@ import { Cart } from '../models/Cart';
 })
 export class CartItemComponent implements OnInit {
   @Input() cartItem: Cart;
+  @Output() removeItem: EventEmitter<number> = new EventEmitter;
 
   constructor() { 
     this.cartItem = {
@@ -34,6 +35,7 @@ export class CartItemComponent implements OnInit {
 
   removeFromCart(id: number): void {
     console.log(`Removed item id: ${id} from cart`);
+    this.removeItem.emit(id);
   }
 
 }

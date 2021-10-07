@@ -54,6 +54,10 @@ export class CartComponent implements OnInit {
         quantity: 1
       }
     ]
+  };
+
+  removeItem(id: number): void {
+    this.cart = this.cart.filter(item => item.id !== id);
   }
 
 }

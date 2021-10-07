@@ -12,6 +12,7 @@ import { CartItemComponent } from './cart-item/cart-item.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
 import { TotalComponent } from './total/total.component';
+import { SuccessComponent } from './success/success.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TotalComponent } from './total/total.component';
     CartItemComponent,
     CartComponent,
     CheckoutFormComponent,
-    TotalComponent
+    TotalComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

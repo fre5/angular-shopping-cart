@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../models/Product';
 
 @Component({
@@ -7,7 +7,7 @@ import { Product } from '../models/Product';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
-  product: Product;
+  @Input() product: Product;
 
   constructor() { 
     this.product = {
@@ -26,7 +26,8 @@ export class ProductPageComponent implements OnInit {
   }
 
   setQuantity(id: number, event: Event): void {
-    console.log(`Set item with id: ${id} with quantity ${event.target}`)
+    const quantity: string = (event.target as HTMLInputElement).value as string;
+    console.log(`Set item with id: ${id} with quantity ${quantity}`)
   }
 
 }

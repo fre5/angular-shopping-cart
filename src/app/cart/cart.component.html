@@ -1,6 +1,6 @@
 <div class="container">
   <div class="cartPanel">
-    <app-cart-item *ngFor="let cartItem of cart" [cartItem]="cartItem"></app-cart-item>
+    <app-cart-item *ngFor="let cartItem of cart" [cartItem]="cartItem" (removeItem)="removeItem($event)"></app-cart-item>
   </div>
   <div class="infoPanel">
     <app-checkout-form></app-checkout-form>
