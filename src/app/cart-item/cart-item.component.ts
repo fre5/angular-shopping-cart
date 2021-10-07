@@ -24,4 +24,16 @@ export class CartItemComponent implements OnInit {
 
   }
 
+  addQuantity(id: number): void {
+    console.log(`Add quantity of item with id: ${id}`);
+  }
+
+  removeQuantity(id: number): void {
+    console.log(`Remove quantity of item with id: ${id}`);
+  }
+
+  removeFromCart(id: number): void {
+    console.log(`Removed item id: ${id} from cart`);
+  }
+
 }

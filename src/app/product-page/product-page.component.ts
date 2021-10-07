@@ -21,4 +21,12 @@ export class ProductPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addToCart(id: number): void {
+    console.log(`Item with id: ${id} added to card`);
+  }
+
+  setQuantity(id: number, event: Event): void {
+    console.log(`Set item with id: ${id} with quantity ${event.target}`)
+  }
+
 }

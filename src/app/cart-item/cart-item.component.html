@@ -4,10 +4,9 @@
     <h2 style="margin-bottom:20px; margin-top:10px;">{{ cartItem.name }}</h2>
     <h2>{{ cartItem.price }}</h2>
     <h3>Qty: {{ cartItem.quantity }}</h3> 
-    <button type="submit">+</button>
-    <button type="submit">-</button>
-
-    <button type="submit">Remove</button>
+    <button class="button" type="submit" (click)="addQuantity(cartItem.id)">+</button>
+    <button class="button" type="submit" (click)="removeQuantity(cartItem.id)">-</button>
+    <button class="button" style="width:100px" type="submit" (click)="removeFromCart(cartItem.id)">Remove</button>
   </div>
 </div>
 

@@ -21,4 +21,13 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addToCart(id: number): void{
+    console.log(`Item with id: ${id} is added to the cart`);
+    alert('Item is added to cart');
+  }
+
+  setQuantity(id: number, event: any): void {
+    console.log(`Item with id: ${id} is set with quantity ${event.target.value}`);
+  }
+
 }

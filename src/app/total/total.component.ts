@@ -12,4 +12,7 @@ export class TotalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkout() {
+    console.log(`Order submitted`);
+  }
 }
