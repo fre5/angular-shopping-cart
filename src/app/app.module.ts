@@ -13,6 +13,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
 import { TotalComponent } from './total/total.component';
 import { SuccessComponent } from './success/success.component';
+import { EmptyComponent } from './empty/empty.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SuccessComponent } from './success/success.component';
     CartComponent,
     CheckoutFormComponent,
     TotalComponent,
-    SuccessComponent
+    SuccessComponent,
+    EmptyComponent
   ],
   imports: [
     BrowserModule,

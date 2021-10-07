@@ -2,10 +2,14 @@ export class Info {
   id: number;
   billingName: string;
   email: string;
-  address: string;
-  city: string;
-  state: string;
-  zip: string;
+  billingAddress: string;
+  billingCity: string;
+  billingState: string;
+  billingZip: string;
+  shippingAddress: string;
+  shippingCity: string;
+  shippingState: string;
+  shippingZip: string;
   cardNumber: string;
   expiration: string;
 
@@ -13,10 +17,14 @@ export class Info {
     this.id = 0;
     this.billingName = '';
     this.email = '';
-    this.address = '';
-    this.city = '';
-    this.state = '';
-    this.zip = '';
+    this.billingAddress = '';
+    this.billingCity = '';
+    this.billingState = '';
+    this.billingZip = '';
+    this.shippingAddress = '';
+    this.shippingCity = '';
+    this.shippingState = '';
+    this.shippingZip = '';
     this.cardNumber = '';
     this.expiration = '';
   }

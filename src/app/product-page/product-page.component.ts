@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/Product';
+import { Cart } from '../models/Cart';
+import { ProductService } from '../services/product.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-page',
@@ -7,27 +10,33 @@ import { Product } from '../models/Product';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
-  @Input() product: Product;
+  product: Product;
+  selectedQty: string;
 
-  constructor() { 
-    this.product = {
-      id: 0,
-      image: '',
-      name: 'Laptop',
-      price: '$ 999',
-    }
+  constructor(private productService: ProductService, private cartService: CartService) { 
+    this.product = this.productService.getSelectedProduct(productService.selectedId);
+    this.selectedQty = '1';
   }
 
   ngOnInit(): void {
   }
 
   addToCart(id: number): void {
-    console.log(`Item with id: ${id} added to card`);
+    const productToAdd: Product = this.productService.getSelectedProduct(id);
+    const cartObj: Cart = { 
+      id: productToAdd.id, 
+      image: productToAdd.image, 
+      name: productToAdd.name, 
+      price: productToAdd.price, 
+      quantity: parseInt(this.selectedQty)
+    };
+    this.cartService.addToCart(cartObj);
+    alert('Item is added');
   }
 
   setQuantity(id: number, event: Event): void {
     const quantity: string = (event.target as HTMLInputElement).value as string;
-    console.log(`Set item with id: ${id} with quantity ${quantity}`)
+    console.log(`Set item with id: ${id} with quantity ${quantity}`);
+    this.selectedQty = quantity;
   }
-
 }

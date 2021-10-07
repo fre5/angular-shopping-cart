@@ -9,6 +9,9 @@ import { Cart } from '../models/Cart';
 export class CartItemComponent implements OnInit {
   @Input() cartItem: Cart;
   @Output() removeItem: EventEmitter<number> = new EventEmitter;
+  @Output() addQty: EventEmitter<number> = new EventEmitter;
+  @Output() removeQty: EventEmitter<number> = new EventEmitter;
+
 
   constructor() { 
     this.cartItem = {
@@ -16,21 +19,21 @@ export class CartItemComponent implements OnInit {
       image: '',
       name: '',
       price: '',
-      productId: 0,
       quantity: 0
     }
   }
 
   ngOnInit(): void {
-
   }
 
   addQuantity(id: number): void {
     console.log(`Add quantity of item with id: ${id}`);
+    this.addQty.emit(id);
   }
 
   removeQuantity(id: number): void {
     console.log(`Remove quantity of item with id: ${id}`);
+    this.removeQty.emit(id);
   }
 
   removeFromCart(id: number): void {

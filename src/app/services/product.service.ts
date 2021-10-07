@@ -4,8 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
+  selectedId: number;
 
-  constructor() {}
+  constructor() {
+    this.selectedId = 0;
+  }
 
   getProducts() {
     return [
@@ -40,5 +43,9 @@ export class ProductService {
         price: '$ 300',
       }
     ];
+  }
+
+  getSelectedProduct(id: number) {
+    return this.getProducts().filter(product => product.id === id)[0];
   }
 }
