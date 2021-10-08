@@ -12,6 +12,7 @@ export class Info {
   shippingZip: string;
   cardNumber: string;
   expiration: string;
+  cvv: string;
 
   constructor() {
     this.id = 0;
@@ -27,5 +28,6 @@ export class Info {
     this.shippingZip = '';
     this.cardNumber = '';
     this.expiration = '';
+    this.cvv = '';
   }
 }

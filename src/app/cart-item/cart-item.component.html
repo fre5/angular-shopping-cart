@@ -2,7 +2,7 @@
   <div class="image"><h2>{{ cartItem.image }}</h2></div>
   <div class="panel">
     <h2 style="margin-bottom:20px; margin-top:10px;">{{ cartItem.name }}</h2>
-    <h2>{{ cartItem.price }}</h2>
+    <h2>$ {{ cartItem.price }}</h2>
     <h3>Qty: {{ cartItem.quantity }}</h3> 
     <button class="button" type="submit" (click)="addQuantity(cartItem.id)">+</button>
     <button class="button" type="submit" (click)="removeQuantity(cartItem.id)">-</button>

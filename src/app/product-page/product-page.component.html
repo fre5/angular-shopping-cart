@@ -2,7 +2,7 @@
   <div class="image"></div>
   <div class="panel">
     <h1 class="name">{{ product.name }}</h1>
-    <h2 class="price">{{ product.price }}</h2>
+    <h2 class="price">$ {{ product.price }}</h2>
     <select class="quantity" (change)="setQuantity(product.id, $event)">
       <option value="0">Qty:</option>
       <option value="1" selected>1</option>
