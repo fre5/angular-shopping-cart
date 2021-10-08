@@ -1,36 +1,36 @@
 <h3>Checkout</h3>
 <br>
-<form (ngSubmit)="submitForm()">
+<form #form="ngForm" (ngSubmit)="submitForm()">
   <div class="textfield" style="margin-top:0px">
     <label><p>Billing name</p></label>
-    <input type="text" name="billingName" [(ngModel)]="info.billingName">
+    <input type="text" name="billingName" [(ngModel)]="info.billingName" required>
   </div>
 
   <div class="textfield">
     <label><p>Email</p></label>
-    <input type="text" name="email" [(ngModel)]="info.email">
+    <input type="text" name="email" [(ngModel)]="info.email" required>
   </div>
 
   <div class="textfield" style="margin-bottom:5px; clear:left">
     <label><p>Billing address</p></label>
-    <input type="text" name="billingAddress" style="margin-bottom: 3px" [(ngModel)]="info.billingAddress">
+    <input type="text" name="billingAddress" style="margin-bottom: 3px" [(ngModel)]="info.billingAddress" required>
     <br>
-    <input type="text" name="billingAddressCont" [(ngModel)]="info.billingAddressCont">
+    <input type="text" name="billingAddressCont" [(ngModel)]="info.billingAddressCont" required>
   </div>
 
   <div class="textfield" style="width:120px; float: left; margin-right: 40px;">
     <label><p>City</p></label>
-    <input type="text" name="billingCity" style="width:130px" [(ngModel)]="info.billingCity">
+    <input type="text" name="billingCity" style="width:130px" [(ngModel)]="info.billingCity" required>
   </div>
 
   <div class="textfield" style="width: 20px; float: left; margin-right: 40px;">
     <label><p>State</p></label>
-    <input type="text" name="billingState" style="width:30px;" maxlength="2" [(ngModel)]="info.billingState">
+    <input type="text" name="billingState" style="width:30px;" maxlength="2" [(ngModel)]="info.billingState" required>
   </div>
 
   <div class="textfield" style="width: 100px; float: left; ">
     <label><p>Zip</p></label>
-    <input type="text" name="billingZip" style="width:100px" maxlength="12" [(ngModel)]="info.billingZip">
+    <input type="text" name="billingZip" style="width:100px" maxlength="12" [(ngModel)]="info.billingZip" required>
   </div>
 
   <div class="textfield">
@@ -62,19 +62,19 @@
 
   <div class="textfield" style="width:180px; float: left; clear:left; margin-right: 40px;">
     <label><p>Card number</p></label>
-    <input type="text" name="card" style="width:190px;" [(ngModel)]="info.card">
+    <input type="text" name="card" style="width:190px;" [(ngModel)]="info.card" required>
   </div>
 
   <div class="textfield" style="width: 120px; float: left; margin-right:0px;">
     <label><p>Exp. date</p></label>
-    <input type="text" name="expMonth" style="width:35px;" maxlength="2" [(ngModel)]="info.expMonth">/<input name="expYear" type="text" style="width:35px;" maxlength="2" [(ngModel)]="info.expYear">
+    <input type="text" name="expMonth" style="width:35px;" maxlength="2" [(ngModel)]="info.expMonth" required>/<input name="expYear" type="text" style="width:35px;" maxlength="2" [(ngModel)]="info.expYear" required>
   </div>
 
   <div class="textfield" style="width: 120px; float: left; margin-right:0px;">
     <label><p>CVV2</p></label>
-    <input type="text" name="cvv" style="width:45px;" maxlength="4" [(ngModel)]="info.cvv">
+    <input type="text" name="cvv" style="width:45px;" maxlength="4" [(ngModel)]="info.cvv" required>
   </div>
 
-  <button routerLink="/success" class="button" type="submit" (click)="checkout()">Submit</button>
+  <input  class="button" type="submit" value="Submit" [disabled]="form.invalid">
 
 </form>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Info } from '../models/Info';
+import { InfoService } from '../services/info.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-checkout-form',
@@ -11,7 +13,7 @@ export class CheckoutFormComponent implements OnInit {
   info: Info;
   submitButton: boolean = false;
 
-  constructor() { 
+  constructor(private infoService: InfoService, private router: Router) { 
     this.info = new Info();
   }
 
@@ -23,12 +25,8 @@ export class CheckoutFormComponent implements OnInit {
     this.checkbox = !this.checkbox;
   }
 
-  checkout() {
-    console.log(`Order submitted`);
-  }
-
   submitForm() {
-    console.log('Form is submitted');
+    this.infoService.info = this.info;
+    this.router.navigate(['success']);
   }
-
 }
