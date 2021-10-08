@@ -15,15 +15,17 @@ export class TotalComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.subtotal = this.cartService.getSubtotal().toString();
-    this.tax = this.cartService.getTax().toString();
-    this.shipping = this.cartService.getShipping().toString();
-    this.total = this.cartService.getTotal().toString();
+    this.update();
   }
 
   checkout() {
     console.log(`Order submitted`);
   }
 
-  
+  update() {
+    this.subtotal = this.cartService.getSubtotal().toString();
+    this.tax = this.cartService.getTax().toString();
+    this.shipping = this.cartService.getShipping().toString();
+    this.total = this.cartService.getTotal().toString();
+  }
 }

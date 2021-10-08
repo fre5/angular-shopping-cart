@@ -16,9 +16,10 @@ export class CartItemComponent implements OnInit {
   constructor() { 
     this.cartItem = {
       id: 0,
-      image: '',
+      url: '',
       name: '',
       price: '',
+      description: '',
       quantity: 0
     }
   }

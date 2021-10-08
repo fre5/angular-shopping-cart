@@ -16,9 +16,10 @@ export class ProductItemComponent implements OnInit {
   constructor(private productService: ProductService, private cartService: CartService) {
     this.product = {
       id: 0,
-      image: '',
+      url: '',
       name: '',
       price: '',
+      description: ''
     };
     this.selectedQty = '1';
   }
@@ -30,9 +31,10 @@ export class ProductItemComponent implements OnInit {
     const productToAdd: Product = this.productService.getSelectedProduct(id);
     const cartObj: Cart = { 
       id: productToAdd.id, 
-      image: productToAdd.image, 
+      url: productToAdd.url, 
       name: productToAdd.name, 
       price: productToAdd.price, 
+      description: productToAdd.description,
       quantity: parseInt(this.selectedQty)
     };
     this.cartService.addToCart(cartObj);

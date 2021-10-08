@@ -60,18 +60,19 @@ export class CartService {
   }
 
   getSubtotal() {
-    return this.cart.reduce((acc, ele) => acc + (parseInt(ele.price, 10) * ele.quantity), 0) ;
+    return this.cart.reduce((acc, ele) => acc + (parseFloat(ele.price) * ele.quantity), 0) ;
   }
 
   getTax() {
-    return this.getSubtotal() * this.CONST_TAX;
+    return (this.getSubtotal() * this.CONST_TAX).toFixed(2);
   }
 
   getShipping() {
-    return this.cart.reduce((acc, ele) => acc + ele.quantity * 7, 10);
+    return this.cart.reduce((acc, ele) => acc + ele.quantity * 7, 10).toFixed(2);
   }
 
   getTotal() {
-    return this.getSubtotal() + this.getTax() + this.getShipping();
+    
+    return (this.getSubtotal() + parseFloat(this.getTax()) + parseFloat(this.getShipping())).toFixed(2);
   }
 }

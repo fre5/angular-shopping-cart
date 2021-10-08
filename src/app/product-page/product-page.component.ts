@@ -25,9 +25,10 @@ export class ProductPageComponent implements OnInit {
     const productToAdd: Product = this.productService.getSelectedProduct(id);
     const cartObj: Cart = { 
       id: productToAdd.id, 
-      image: productToAdd.image, 
+      url: productToAdd.url, 
       name: productToAdd.name, 
       price: productToAdd.price, 
+      description: productToAdd.description,
       quantity: parseInt(this.selectedQty)
     };
     this.cartService.addToCart(cartObj);

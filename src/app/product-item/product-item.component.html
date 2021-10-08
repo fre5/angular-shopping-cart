@@ -1,6 +1,7 @@
 <div class="product">
-  <div routerLink='/product' (click)="goToPage(product.id)" class="image"></div>
+  <div routerLink='/product' (click)="goToPage(product.id)" class="url"></div>
   <h2 routerLink='/product' (click)="goToPage(product.id)" class="name">{{ product.name }}</h2>
+  <h3>{{ product.description }}</h3>
   <h2 class="price">$ {{ product.price }}</h2>
   <select class="quantity" (change)="setQuantity(product.id, $event)">
     <option value="0">Qty:</option>

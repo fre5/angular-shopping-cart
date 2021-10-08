@@ -14,33 +14,38 @@ export class ProductService {
     return [
       {
         id: 1,
-        image: '',
+        url: '',
         name: 'Laptop',
-        price: '1000',
+        price: '1000.00',
+        description: ''
       },
       {
         id: 2,
-        image: '',
+        url: '',
         name: 'Desktop',
-        price: '1200',
+        price: '1200.00',
+        description: ''
       },
       {
         id: 3,
-        image: '',
+        url: '',
         name: 'Tablet',
-        price: '300',
+        price: '300.00',
+        description: ''
       },
       {
         id: 4,
-        image: '',
+        url: '',
         name: 'Phone',
-        price: '500',
+        price: '500.00',
+        description: ''
       },
       {
         id: 5,
-        image: '',
+        url: '',
         name: 'Smart Watch',
-        price: '300',
+        price: '300.00',
+        description: ''
       }
     ];
   }
