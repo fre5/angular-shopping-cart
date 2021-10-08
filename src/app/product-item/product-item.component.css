@@ -1,6 +1,6 @@
 .product {
   width: 300px;
-  height: 370px;
+  height: 450px;
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
@@ -8,10 +8,14 @@
   padding: 20px;
 }
 
-.url {
+.image {
   background-color: #666;
-  height: 200px;
+  height: 280px;
   cursor: pointer;
+  background-size: cover;   
+  background-position: center 60%;          
+        
+
 }
 
 .name {

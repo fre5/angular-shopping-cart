@@ -10,8 +10,9 @@
     </app-cart-item>
   </div>
   <div class="infoPanel" *ngIf="cart.length > 0">
-    <app-checkout-form></app-checkout-form>
     <app-total [subtotal]="updateSubtotal()" [tax]="updateTax()" [shipping]="updateShipping()" [total]="updateTotal()"></app-total>
+    <div class="spacer"></div>
+    <app-checkout-form></app-checkout-form>
   </div>
 
 </div>

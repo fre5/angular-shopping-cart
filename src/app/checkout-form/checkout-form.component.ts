@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Info } from '../models/Info';
 
 @Component({
   selector: 'app-checkout-form',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutFormComponent implements OnInit {
   checkbox: boolean = true;
+  info: Info;
+  submitButton: boolean = false;
 
-  constructor() { }
+  constructor() { 
+    this.info = new Info();
+  }
 
   ngOnInit(): void {
     this.checkbox = false;
@@ -16,6 +21,14 @@ export class CheckoutFormComponent implements OnInit {
 
   checkboxCheck() {
     this.checkbox = !this.checkbox;
+  }
+
+  checkout() {
+    console.log(`Order submitted`);
+  }
+
+  submitForm() {
+    console.log('Form is submitted');
   }
 
 }

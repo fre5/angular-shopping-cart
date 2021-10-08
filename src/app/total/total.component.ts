@@ -23,12 +23,9 @@ export class TotalComponent implements OnInit {
     this.updateTotal();
   }
 
-  checkout() {
-    console.log(`Order submitted`);
-  }
 
   updateTotal() {
-    this.subtotal = this.cartService.getSubtotal().toString();
+    this.subtotal = this.cartService.getSubtotal().toFixed(2).toString();
     this.tax = this.cartService.getTax().toString();
     this.shipping = this.cartService.getShipping().toString();
     this.total = this.cartService.getTotal().toString();

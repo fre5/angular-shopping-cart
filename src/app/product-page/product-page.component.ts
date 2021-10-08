@@ -14,21 +14,23 @@ export class ProductPageComponent implements OnInit {
   selectedQty: string;
 
   constructor(private productService: ProductService, private cartService: CartService) { 
-    this.product = this.productService.getSelectedProduct(productService.selectedId);
+    this.product = new Product();
     this.selectedQty = '1';
   }
 
   ngOnInit(): void {
+    this.productService.getProducts().subscribe(res => {
+      this.product = res.filter(item => item.id === this.productService.selectedId)[0];
+    });
   }
 
-  addToCart(id: number): void {
-    const productToAdd: Product = this.productService.getSelectedProduct(id);
+  addToCart(id: number): void {    
     const cartObj: Cart = { 
-      id: productToAdd.id, 
-      url: productToAdd.url, 
-      name: productToAdd.name, 
-      price: productToAdd.price, 
-      description: productToAdd.description,
+      id: this.product.id,
+      url: this.product.url,
+      name: this.product.name, 
+      price: this.product.price, 
+      description: this.product.description,
       quantity: parseInt(this.selectedQty)
     };
     this.cartService.addToCart(cartObj);
@@ -37,7 +39,7 @@ export class ProductPageComponent implements OnInit {
 
   setQuantity(id: number, event: Event): void {
     const quantity: string = (event.target as HTMLInputElement).value as string;
-    console.log(`Set item with id: ${id} with quantity ${quantity}`);
     this.selectedQty = quantity;
+    console.log(`Set item with id: ${id} with quantity ${quantity}`);
   }
 }

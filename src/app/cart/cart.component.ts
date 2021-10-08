@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
   }
 
   updateSubtotal() {
-    return this.cartService.getSubtotal().toString();
+    return this.cartService.getSubtotal().toFixed(2).toString();
   }
 
   updateTax() {

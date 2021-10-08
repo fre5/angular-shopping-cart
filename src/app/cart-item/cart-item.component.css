@@ -10,6 +10,8 @@
   height: 200px;
   background-color: #666;
   float: left;
+  background-size: cover;   
+  background-position: center 60%;
 }
 
 .panel {

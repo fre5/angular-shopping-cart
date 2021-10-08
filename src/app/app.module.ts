@@ -1,9 +1,13 @@
+//Built-in
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
+//Routing
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
+//Components
+import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductItemComponent } from './product-item/product-item.component';
@@ -14,6 +18,7 @@ import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
 import { TotalComponent } from './total/total.component';
 import { SuccessComponent } from './success/success.component';
 import { EmptyComponent } from './empty/empty.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,7 +37,9 @@ import { EmptyComponent } from './empty/empty.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

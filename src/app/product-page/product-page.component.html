@@ -1,8 +1,8 @@
 <div class="product">
-  <div class="url"></div>
+  <div class="image" [ngStyle]="{'background-image': 'url(' + product.url + ')'}"></div>
   <div class="panel">
     <h1 class="name">{{ product.name }}</h1>
-    <h3 class="name">{{ product.description }}</h3>
+    <p class="name">{{ product.description }}</p>
     <h2 class="price">$ {{ product.price }}</h2>
     <select class="quantity" (change)="setQuantity(product.id, $event)">
       <option value="0">Qty:</option>

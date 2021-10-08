@@ -1,29 +1,85 @@
 # Mystore
 
-A store application with shopping cart 
+A shopping cart single page application using Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 
-## Development server
+## How to run
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Unzip folder, go to terminal and set the unzip folder as current directory `cd mystore`
+- Install all dependencies `npm install` 
+- Run the application `ng serve` 
+- The application will run under `http://localhost:4200` on the local browser
+- To set a custom port run `ng serve --port=<port number>`
+- To run the application to a designated ip on a remote network run `ng serve --host=<ip address>`
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## API used
+https://raw.githubusercontent.com/udacity/nd-0067-c3-angular-fundamentals-project-starter/main/src/assets/data.json
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Features
 
-## Running unit tests
+- Entire site is mobile ready
+- Clicking the image or title on product will open product page
+- Clicking back to product page link will open the product list page
+- Add to cart button prompt an alert and adds the product with the assigned quantity to the cart
+- Adding an item that already exist in the cart will add to the quantity
+- Quantity can be added, reduced or removed on cart page
+- When quantity is reduced to zero, item is automatically removed
+- When there is no item in the cart, the checkout form is hidden, a link to go to product list page is provided
+- Checkout form is set to have billing address and shipping address the same on default
+- When unchecking shipping address checkbox will unhide the shipping address input fields
+- Subtotal, tax, shipping, and total is calculated on the total component 
+- Whenever an item is removed, added, quantity edited, the total amount is updated automatically
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Models
 
-## Running end-to-end tests
+### Product
+  id: number;
+  url: string;
+  name: string;
+  price: string;
+  description: string;
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Cart
+  id: number;
+  url: string;
+  name: string;
+  price: string;
+  description: string;
+  quantity: number;
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Info
+  id: number;
+  billingName:string;
+  email:string;
+  billingAddress:string;
+  billingAddressCont:string;
+  billingCity:string;
+  billingState:string;
+  billingZip:string;
+  shippingAddress:string;
+  shippingAddressCont:string;
+  shippingCity:string;
+  shippingState:string;
+  shippingZip:string;
+  card:string;
+  expMonth:string;
+  expYear: string;
+  cvv: string;
+
+
+
+## Future features
+
+- User account and user profile page with order history
+- Tax and shipping adjustment based on zip code
+- Credit/debit card number validation
+- Paypal integration
+- An admin panel to edit products into a database
+ 
+
+
+
+

@@ -1,56 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Product } from '../models/Product';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   selectedId: number;
+  selectedProduct: Product;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.selectedId = 0;
+    this.selectedProduct = new Product();
   }
 
-  getProducts() {
-    return [
-      {
-        id: 1,
-        url: '',
-        name: 'Laptop',
-        price: '1000.00',
-        description: ''
-      },
-      {
-        id: 2,
-        url: '',
-        name: 'Desktop',
-        price: '1200.00',
-        description: ''
-      },
-      {
-        id: 3,
-        url: '',
-        name: 'Tablet',
-        price: '300.00',
-        description: ''
-      },
-      {
-        id: 4,
-        url: '',
-        name: 'Phone',
-        price: '500.00',
-        description: ''
-      },
-      {
-        id: 5,
-        url: '',
-        name: 'Smart Watch',
-        price: '300.00',
-        description: ''
-      }
-    ];
-  }
-
-  getSelectedProduct(id: number) {
-    return this.getProducts().filter(product => product.id === id)[0];
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>("https://raw.githubusercontent.com/udacity/nd-0067-c3-angular-fundamentals-project-starter/main/src/assets/data.json");
   }
 }

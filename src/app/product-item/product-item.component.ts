@@ -12,33 +12,32 @@ import { CartService } from '../services/cart.service';
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
   selectedQty: string;
+  selectedProduct: Product;
 
   constructor(private productService: ProductService, private cartService: CartService) {
-    this.product = {
-      id: 0,
-      url: '',
-      name: '',
-      price: '',
-      description: ''
-    };
+    this.product = new Product();
     this.selectedQty = '1';
+    this.selectedProduct = new Product();
   }
 
   ngOnInit(): void {
   }
 
-  addToCart(id: number): void{
-    const productToAdd: Product = this.productService.getSelectedProduct(id);
-    const cartObj: Cart = { 
-      id: productToAdd.id, 
-      url: productToAdd.url, 
-      name: productToAdd.name, 
-      price: productToAdd.price, 
-      description: productToAdd.description,
-      quantity: parseInt(this.selectedQty)
-    };
-    this.cartService.addToCart(cartObj);
-    alert('Item is added');
+  addToCart(id: number): void {
+    this.productService.getProducts().subscribe(res => {
+      this.selectedProduct = res.filter(item => item['id'] === id)[0];
+      this.productService.selectedProduct = this.selectedProduct;
+      const cartObj: Cart = { 
+        id: this.selectedProduct.id,
+        url: this.selectedProduct.url,
+        name: this.selectedProduct.name,
+        price: this.selectedProduct.price,
+        description: this.selectedProduct.description,
+        quantity: parseInt(this.selectedQty)
+      };
+      this.cartService.addToCart(cartObj);
+      alert('Item is added');
+    });
   }
 
   setQuantity(id: number, event: Event): void {
