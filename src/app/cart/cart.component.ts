@@ -29,4 +29,20 @@ export class CartComponent implements OnInit {
     this.cartService.removeItem(id);
     this.cart = this.cartService.cart;
   }
+
+  updateSubtotal() {
+    return this.cartService.getSubtotal().toString();
+  }
+
+  updateTax() {
+    return this.cartService.getTax();
+  }
+
+  updateShipping() {
+    return this.cartService.getShipping();
+  }
+
+  updateTotal() {
+    return this.cartService.getTotal();
+  }
 }

@@ -60,7 +60,7 @@ export class CartService {
   }
 
   getSubtotal() {
-    return this.cart.reduce((acc, ele) => acc + (parseFloat(ele.price) * ele.quantity), 0) ;
+    return this.cart.reduce((acc, ele) => acc + (parseFloat(ele.price) * ele.quantity), 0);
   }
 
   getTax() {

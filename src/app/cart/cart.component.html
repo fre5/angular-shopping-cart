@@ -11,7 +11,7 @@
   </div>
   <div class="infoPanel" *ngIf="cart.length > 0">
     <app-checkout-form></app-checkout-form>
-    <app-total></app-total>
+    <app-total [subtotal]="updateSubtotal()" [tax]="updateTax()" [shipping]="updateShipping()" [total]="updateTotal()"></app-total>
   </div>
 
 </div>

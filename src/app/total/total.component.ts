@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -7,22 +7,27 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./total.component.css']
 })
 export class TotalComponent implements OnInit {
-  subtotal: string = '';
-  tax: string = '';
-  shipping: string = '';
-  total: string = '';
+  @Input() subtotal: string;
+  @Input() tax: string;
+  @Input() shipping: string;
+  @Input() total: string;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService) { 
+    this.subtotal = '';
+    this.tax = '';
+    this.shipping = '';
+    this.total = '';
+  }
 
   ngOnInit(): void {
-    this.update();
+    this.updateTotal();
   }
 
   checkout() {
     console.log(`Order submitted`);
   }
 
-  update() {
+  updateTotal() {
     this.subtotal = this.cartService.getSubtotal().toString();
     this.tax = this.cartService.getTax().toString();
     this.shipping = this.cartService.getShipping().toString();
