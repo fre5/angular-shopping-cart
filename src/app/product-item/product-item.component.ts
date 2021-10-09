@@ -40,8 +40,7 @@ export class ProductItemComponent implements OnInit {
     });
   }
 
-  setQuantity(id: number, event: Event): void {
-    const quantity: string = (event.target as HTMLInputElement).value as string;
+  setQuantity(quantity: string): void {
     this.selectedQty = quantity;
   }
 

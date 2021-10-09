@@ -12,6 +12,7 @@ export class CheckoutFormComponent implements OnInit {
   checkbox: boolean = true;
   info: Info;
   submitButton: boolean = false;
+  notify: boolean = false;
 
   constructor(private infoService: InfoService, private router: Router) { 
     this.info = new Info();
@@ -28,5 +29,14 @@ export class CheckoutFormComponent implements OnInit {
   submitForm() {
     this.infoService.info = this.info;
     this.router.navigate(['success']);
+  }
+
+  validationFeedback(state: boolean|null) {
+    if (state) {
+      this.notify = true;
+    } else {
+      console.log('valid');
+      this.submitForm();
+    }
   }
 }

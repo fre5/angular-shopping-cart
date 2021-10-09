@@ -28,6 +28,7 @@ export class CartComponent implements OnInit {
   removeItem(id: number): void {
     this.cartService.removeItem(id);
     this.cart = this.cartService.cart;
+    alert(`Item with id: ${id} is successfully removed`);
   }
 
   updateSubtotal() {

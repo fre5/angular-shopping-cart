@@ -37,9 +37,7 @@ export class ProductPageComponent implements OnInit {
     alert('Item is added');
   }
 
-  setQuantity(id: number, event: Event): void {
-    const quantity: string = (event.target as HTMLInputElement).value as string;
+  setQuantity(quantity: string): void {
     this.selectedQty = quantity;
-    console.log(`Set item with id: ${id} with quantity ${quantity}`);
   }
 }
