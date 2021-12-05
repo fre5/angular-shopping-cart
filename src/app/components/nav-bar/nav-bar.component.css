@@ -1,0 +1,13 @@
+.navigation {
+  background-color: #cccccc;
+  margin: 0px;
+  padding: 0px; 
+  height:100px;
+  margin-bottom:20px;
+}
+
+.title {
+  text-align:center;
+  margin:0px;
+  padding:35px 0px 0px 0px;
+}

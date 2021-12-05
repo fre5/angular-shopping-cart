@@ -1,0 +1,24 @@
+<div class="product">
+  <div routerLink='/product' (click)="goToPage(product.id)" class="image" [ngStyle]="{'background-image': 'url(' + product.url + ')'}"></div>
+  <h2 routerLink='/product' (click)="goToPage(product.id)" class="name">{{ product.name }}</h2>
+  <h2 class="price">$ {{ product.price }}</h2>
+  <select class="quantity" [ngModel]="selectedQty" (ngModelChange)="setQuantity($event)">
+    <option value="0">Qty:</option>
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+  </select>  
+  <button class="button" type="submit" (click)="addToCart(product.id)">Add to Cart</button>
+
+</div>
+
+

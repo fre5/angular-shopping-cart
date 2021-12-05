@@ -1,0 +1,15 @@
+.line {
+  width: 330px;
+  float: left;
+  height:35px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float:right;
+}
+
+

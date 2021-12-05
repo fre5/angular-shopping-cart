@@ -1,0 +1,19 @@
+<div class="container">
+  <app-empty *ngIf="cart.length === 0"></app-empty>
+  <div class="cartPanel" *ngIf="cart.length > 0">
+    <app-cart-item *ngFor="let cartItem of cart"
+      [cartItem]="cartItem"
+      (removeItem)="removeItem($event)" 
+      (addQty)="addQty($event)"
+      (removeQty)="removeQty($event)"  
+      >
+    </app-cart-item>
+  </div>
+  <div class="infoPanel" *ngIf="cart.length > 0">
+    <app-total [subtotal]="updateSubtotal()" [tax]="updateTax()" [shipping]="updateShipping()" [total]="updateTotal()"></app-total>
+    <div class="spacer"></div>
+    <app-checkout-form></app-checkout-form>
+  </div>
+
+</div>
+

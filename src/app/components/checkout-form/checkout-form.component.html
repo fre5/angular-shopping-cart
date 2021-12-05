@@ -1,0 +1,81 @@
+<h3>Checkout</h3>
+<br>
+<form #form="ngForm">
+  <div class="textfield" style="margin-top:0px">
+    <label><p>Billing name</p></label>
+    <input type="text" name="billingName" [(ngModel)]="info.billingName" minlength="5" required>
+  </div>
+
+  <div class="textfield">
+    <label><p>Email</p></label>
+    <input type="text" name="email" [(ngModel)]="info.email" minlength="7" required>
+  </div>
+
+  <div class="textfield" style="margin-bottom:5px; clear:left">
+    <label><p>Billing address</p></label>
+    <input type="text" name="billingAddress" style="margin-bottom: 3px" [(ngModel)]="info.billingAddress" required>
+    <br>
+    <input type="text" name="billingAddressCont" [(ngModel)]="info.billingAddressCont" required>
+  </div>
+
+  <div class="textfield" style="width:120px; float: left; margin-right: 40px;">
+    <label><p>City</p></label>
+    <input type="text" name="billingCity" style="width:130px" [(ngModel)]="info.billingCity" minlength="3" maxlength="36" required>
+  </div>
+
+  <div class="textfield" style="width: 20px; float: left; margin-right: 40px;">
+    <label><p>State</p></label>
+    <input type="text" name="billingState" style="width:30px;" maxlength="2" [(ngModel)]="info.billingState" minlength="2" required>
+  </div>
+
+  <div class="textfield" style="width: 100px; float: left; ">
+    <label><p>Zip</p></label>
+    <input type="text" name="billingZip" style="width:100px" maxlength="12" [(ngModel)]="info.billingZip" required>
+  </div>
+
+  <div class="textfield">
+    <input type="checkbox" checked style="width:25px;" [ngModel]="!checkbox" (ngModelChange)="checkboxCheck()" [ngModelOptions]="{standalone: true}">
+      <p style="width:300px; margin-top: 8px; float:right">Ship to billing address</p>
+  </div>
+
+  <div *ngIf="checkbox" id="shippingaddress" class="textfield" style="margin-bottom:5px; clear:left">
+    <label><p>Shipping address</p></label>
+    <input type="text" name="shippingAddress" style="margin-bottom: 3px" [(ngModel)]="info.shippingAddress">
+    <br>
+    <input type="text" name="shippingAddressCont" [(ngModel)]="info.shippingAddressCont">
+  </div>
+
+  <div *ngIf="checkbox" class="textfield" style="width:120px; float: left; margin-right: 40px;">
+    <label><p>City</p></label>
+    <input type="text" name="shippingCity" style="width:130px" [(ngModel)]="info.shippingCity" minlength="3" maxlength="36">
+  </div>
+
+  <div *ngIf="checkbox" class="textfield" style="width: 20px; float: left; margin-right: 40px;">
+    <label><p>State</p></label>
+    <input type="text" name="shippingState" style="width:30px;" maxlength="2" [(ngModel)]="info.shippingState" minlength="2">
+  </div>
+
+  <div *ngIf="checkbox" class="textfield" style="width: 100px; float: left; ">
+    <label><p>Zip</p></label>
+    <input type="text" name="shippingZip" style="width:100px" maxlength="12" [(ngModel)]="info.shippingZip">
+  </div>
+
+  <div class="textfield" style="width:180px; float: left; clear:left; margin-right: 40px;">
+    <label><p>Card number</p></label>
+    <input type="text" name="card" style="width:190px;" [(ngModel)]="info.card" required minlength="19" maxlength="19">
+  </div>
+
+  <div class="textfield" style="width: 120px; float: left; margin-right:0px;">
+    <label><p>Exp. date</p></label>
+    <input type="text" name="expMonth" style="width:35px;" maxlength="2" [(ngModel)]="info.expMonth" minlength="2" required>/<input name="expYear" type="text" style="width:35px;" maxlength="2" [(ngModel)]="info.expYear" minlength="2" required>
+  </div>
+
+  <div class="textfield" style="width: 120px; float: left; margin-right:0px;">
+    <label><p>CVV2</p></label>
+    <input type="text" name="cvv" style="width:45px;" maxlength="4" [(ngModel)]="info.cvv" minlength="3" required>
+  </div>
+  <br>
+  <p style="color:red; clear:left; margin-top:30px" *ngIf="form.invalid && notify">Invalid input(s), please check your information</p>
+  <input  class="button" type="button" value="Submit"  (click)="validationFeedback(form.invalid)">
+
+</form>
