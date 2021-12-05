@@ -2,7 +2,7 @@
 
 A shopping cart single page application using Angular
 
-[DEMO](https://adoring-galileo-c22000f.netlify.app)
+[DEMO](https://adoring-galileo-c2200f.netlify.app)
 
 
 ## How to run
