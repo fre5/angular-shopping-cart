@@ -2,11 +2,8 @@
 
 A shopping cart single page application using Angular
 
-<<<<<<< HEAD
 [DEMO](https://adoring-galileo-c2200f.netlify.app)
 
-=======
->>>>>>> cabb4326c6ea67d3ad81c2509a4084b111cf2836
 
 ## How to run
 
